@@ -10,8 +10,6 @@ public class Libro {
 	
 	public Libro(String isbn) {
 		this.isbn = isbn;
-		this.titulo = "";
-		this.categoria = "";
 	}
 	
 	public Libro() {
@@ -57,8 +55,8 @@ public class Libro {
 	}
 	
 	public void modificar() {
+		String consultaSQL = "UPDATE libro SET titulo='"+ this.titulo +"', categoria='"+  categoria +"' WHERE isbn ='"+ isbn +"'";
 		DataBaseHelper<Libro> obj1 = new DataBaseHelper<Libro>();
-		String consultaSQL = "UPDATE libro set titulo = '"+ this.titulo +"'";
 		obj1.modificaRegistro(consultaSQL);
 	}
 	
@@ -83,9 +81,9 @@ public class Libro {
 	}
 	
 	public static Libro buscarPorClave(String isbn){
-		String consultaSQL = "SELECT isbn,titulo,categoria FROM Libro WHERE isbn ='"+ isbn+"'";
+		String consultaSQL = "SELECT isbn,titulo,categoria FROM Libro WHERE isbn ='"+ isbn +"'";
 		DataBaseHelper<Libro> obj1 = new DataBaseHelper<Libro>();
-		List<Libro> listaPorClave = obj1.seleccionaRegistros(consultaSQL,String.class);
+		List<Libro> listaPorClave = obj1.seleccionaRegistros(consultaSQL,Libro.class);
 		return listaPorClave.get(0);
 	}
 	

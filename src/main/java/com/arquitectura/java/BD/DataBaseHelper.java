@@ -19,8 +19,7 @@ public class DataBaseHelper<T> {
 	
 	//METODO QUE GESTIONA LOS INSERT, UPDATE Y DELETE
 	public int modificaRegistro(String consultaSQL) {
-		
-		Connection conexion = null;
+			Connection conexion = null;
 		Statement sentencia = null;
 		int filasAfectadas = 0;
 		
