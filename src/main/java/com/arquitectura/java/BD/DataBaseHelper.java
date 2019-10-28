@@ -28,7 +28,6 @@ public class DataBaseHelper<T> {
 			conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
 			sentencia = conexion.createStatement();
 			filasAfectadas = sentencia.executeUpdate(consultaSQL);
-			System.out.print("Insertando datos a base de datos....." + filasAfectadas);
 		}catch (ClassNotFoundException e) {
 			System.out.print("Error en dependencia maven !!!!" + e.getMessage());
 		}catch (SQLException e) {

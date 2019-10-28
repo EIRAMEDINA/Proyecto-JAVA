@@ -8,6 +8,6 @@
     	String isbn = request.getParameter("isbn");
     	Libro obj1 = new Libro(isbn);
     	obj1.borrar();
-    	System.out.print("Borando datos de BD ...." + obj1);
+    	System.out.print("\n Borrando Datos....." + "\n" +  "ISBN:" + isbn + "\n");
     	response.sendRedirect("MostrarLibros.jsp");
     %>
